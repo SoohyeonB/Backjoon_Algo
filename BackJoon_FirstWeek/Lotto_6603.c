@@ -7,10 +7,11 @@
 //2. s중에서 6개씩 뽑아 가능한 집합의 개수 구하기
 // DFS활용
 
-int arr[13];
+int arr[14];
 int answer[14];
 int k;
 
+//isVisited로 방문이 확인되지도 않았는데 어떻게 가능..?
 void DFS(int start, int depth) {
 	int i;
 	if (depth == 6) {	

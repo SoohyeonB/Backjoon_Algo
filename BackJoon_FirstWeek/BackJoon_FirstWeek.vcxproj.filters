@@ -18,5 +18,8 @@
     <ClCompile Include="Lotto_6603.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="TreeTraversal_1991.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
