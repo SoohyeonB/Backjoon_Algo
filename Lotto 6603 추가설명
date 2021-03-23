@@ -1,0 +1,50 @@
+DFS 재귀적 호출 작동과정
+k=7일때
+
+Dfs (0,0)
+  for(i=0; i<7; i++)
+  answer[0] = arr[0]
+  DFS(1,1)
+    for(i=1; i<7; i++)
+    answer[1] = arr[1]
+    DFS(2,2)
+      for(i=2; i<7; i++)
+      answer[2] = arr[2]
+      DFS(3,3)
+        for(i=3; i<7; i++)
+        answer[3] = arr[3]
+        DFS(4,4)
+          for(i=4; i<7; i++)
+          answer[4] = arr[4]
+          DFS(5,5)
+            for(i=5; i<7; i++)
+            answer[5] = arr[5]
+            DFS(6)
+              for(i=6; i<7; i++)
+              answer[6] = arr[6]
+            answer[5] = arr[6]
+          answer[4] = arr[5]
+          answer[4] = arr[6]
+        answer[3] = arr[4]
+        answer[3] = arr[5]
+        answer[3] = arr[6]
+      answer[2] = arr[3]
+      answer[2] = arr[4]            
+      answer[2] = arr[5]            
+      answer[2] = arr[6]    
+    answer[1] = arr[2]  
+    answer[1] = arr[3]     
+    answer[1] = arr[4]     
+    answer[1] = arr[5]     
+    answer[1] = arr[6]     
+    
+   .
+   .
+   .
+   이렇게 되어야 하는거 아닌가 ㅠㅠㅠ
+    
+    answer[1] = arr[3]                
+    answer[1] = arr[4]                
+    answer[1] = arr[5]                
+    answer[1] = arr[6]
+  answer[0] = arr[1]              
