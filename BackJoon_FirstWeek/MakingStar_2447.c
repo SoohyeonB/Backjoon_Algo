@@ -4,7 +4,8 @@
 char arr[size][size] = { NULL };
 
 /*별찍기 -10 (2447번)*/
-void makeStar(int n, int m) {
+// 쓰레기 같은 효율성^^...
+int makeStar(int n, int m) {
 	if (m == n * 3) return 0;
 	else {
 		if (m == 3) {
