@@ -21,5 +21,8 @@
     <ClCompile Include="TreeTraversal_1991.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="MakingStar_2447.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
