@@ -30,5 +30,8 @@
     <ClCompile Include="NumOfPaper_1780.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Z_1074.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
