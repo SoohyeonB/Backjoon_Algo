@@ -27,5 +27,8 @@
     <ClCompile Include="QuadTree_1992.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="NumOfPaper_1780.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
