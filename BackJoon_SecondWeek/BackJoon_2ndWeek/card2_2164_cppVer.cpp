@@ -25,7 +25,7 @@ int main(int argc, char* argv[]){
 	while (q.size() > 1) { //큐가 비어있지 않으면
 		q.pop();		//맨 앞에 있는 것을 꺼냄
 		q.push(q.front()); //그 다음꺼는 꺼내서 맨 밑에 넣음
-		q.pop();		
+		q.pop();	
 	}
 
 	cout << q.front() << endl;
