@@ -4,7 +4,7 @@
 #include <algorithm>
 
 typedef struct ListNode {
-	int data;
+	int rank;
 	struct ListNode* link;
 }ListNode;
 
@@ -32,7 +32,7 @@ headNode* enqueue(headNode* L, int data) {
 	ListNode* before = (ListNode*)malloc(sizeof(ListNode*));
 	ListNode* p = (ListNode*)malloc(sizeof(ListNode*));
 
-	p->data = data;
+	p->rank = data;
 	p->link = NULL;
 	before = L->head;
 
@@ -60,7 +60,7 @@ int doGame(headNode *L, int n) {
 	int num = 1;
 	while (1) { //p의 다음 노드가 NULL이 아닐 경우
 		if (p->link ==NULL) { //p가 마지막 장일때 
-			return p->data;
+			return p->rank;
 			break;
 		}
 		else {
