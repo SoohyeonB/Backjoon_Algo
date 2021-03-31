@@ -30,5 +30,11 @@
     <ClCompile Include="PrinterQueue02_1966.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Deque_01_10866.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Deque_02_10866.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
