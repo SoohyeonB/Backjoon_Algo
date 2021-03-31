@@ -39,5 +39,11 @@
     <ClCompile Include="Queue2_01_18258.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Queue2_02_18258.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue2_03_18258.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
