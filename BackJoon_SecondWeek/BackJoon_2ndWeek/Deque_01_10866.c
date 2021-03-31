@@ -25,12 +25,17 @@ void push_front(Deque* D, int newData) {
 	D->head = p;
 }
 void push_back(Deque* D, int newData) {
+	printf("2%d push back", newData);
+
 	Node* p = (Node*)malloc(sizeof(Node));
-	p->data = newData;
 	p = D->head;
+	p->data = newData;
+
 	while (p->link) {
+		printf("d\n");
 		p = p->link;
 	}
+	printf("3%d push back", newData);
 }
 void pop_front(Deque* D) {
 	if (D->head == NULL)
@@ -99,18 +104,20 @@ void back(Deque* D) {
 
 
 int main() {
-	Node* Deque = (Node*)malloc(sizeof(Node));
+	Deque Deque;
 	init(&Deque);
 
 	int n;
 	scanf_s("%d", &n); //명령의 수
-	char order[10] = {' ',};
+	getchar();
+	
 
 	for (int i = 0; i < n; i++) {
 		//문자열 입력 받는 부분 이상함 ㅠ
-		for (int j = 0; j < 10; j++) {
-			scanf_s("%c", &order[i]); //명령의 수
-		}
+		char order[10];
+		gets(order);
+		printf("%s\n", order);
+
 		if (order[0] == 'f') 	//front
 			front(&Deque);
 		else if (order[0] == 'b') //back
@@ -122,8 +129,13 @@ int main() {
 		else if(order[1] == 'u') { //push
 			int what;
 			scanf_s("%d", &what);
-			if (order[5] == 'b')  //pushBack
+			if (order[5] == 'b') { //pushBack
+				printf("1%d push back", what);
+
 				push_back(&Deque, what);
+				printf("4%d push back", what);
+
+			}
 			else if (order[5] == 'f')		//pushFront
 				push_front(&Deque, what);
 		}
