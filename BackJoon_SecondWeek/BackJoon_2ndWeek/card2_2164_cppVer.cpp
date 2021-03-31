@@ -24,8 +24,8 @@ int main(int argc, char* argv[]){
 	//pop push 한번씩 해줘야 하는거 아님...? 
 	while (q.size() > 1) { //큐가 비어있지 않으면
 		q.pop();		//맨 앞에 있는 것을 꺼냄
-		q.push(q.front()); //그 다음꺼는 꺼내서 맨 밑에 넣음
-		q.pop();	
+		q.push(q.front()); //그 수를 받아와서 맨 밑에 넣음
+		q.pop();			//맨위에꺼 삭제
 	}
 
 	cout << q.front() << endl;
