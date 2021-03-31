@@ -18,15 +18,15 @@ void init(Deque* D) {
 	D->head = NULL;
 }
 
-void push_front(Deque* D, int new) {
+void push_front(Deque* D, int newData) {
 	Node* p = (Node*)malloc(sizeof(Node));
-	p->data = new;
+	p->data = newData;
 	p->link = D->head->link;
 	D->head = p;
 }
-void push_back(Deque* D, int new) {
+void push_back(Deque* D, int newData) {
 	Node* p = (Node*)malloc(sizeof(Node));
-	p->data = new;
+	p->data = newData;
 	p = D->head;
 	while (p->link) {
 		p = p->link;
@@ -100,15 +100,16 @@ void back(Deque* D) {
 
 int main() {
 	Node* Deque = (Node*)malloc(sizeof(Node));
-	init(Deque);
+	init(&Deque);
 
 	int n;
 	scanf_s("%d", &n); //명령의 수
 	char order[10] = {' ',};
 
 	for (int i = 0; i < n; i++) {
+		//문자열 입력 받는 부분 이상함 ㅠ
 		for (int j = 0; j < 10; j++) {
-			scanf_s("%c", &order); //명령의 수
+			scanf_s("%c", &order[i]); //명령의 수
 		}
 		if (order[0] == 'f') 	//front
 			front(&Deque);
