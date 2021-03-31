@@ -1,69 +1,100 @@
 #include <stdio.h>
 #include <stdlib.h>
+typedef struct Node {
+    char ele;
+    struct Node* left;
+    struct Node* right;
+}Node;
+Node* NewNode(char ele)
+{
+    Node* New;
+    New = (Node*)malloc(sizeof(Node));
+    New->ele = ele;
+    New->left = NULL;
+    New->right = NULL;
+    return New;
+}
+Node* search_Node(Node* H, char ele)
+{
+    if (H != NULL) {
+        if (H->ele == ele) {
+            return H;
+        }
+        else {
+            Node* tmp = search_Node(H->left, ele);
+            if (tmp != NULL) {
+                return tmp;
+            }
 
-/*1991번 pre, in, post order결과 출력*/
-/*linked list로 구현*/
-
-typedef struct TreeNode {
-	char data;
-	TreeNode* left, right;
-}TreeNode;
-
-TreeNode* init(char key) {
-	TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode*));
-	newNode->data = key;
-	newNode->left = NULL;
-	newNode->right = NULL;
-	return newNode;
+            return search_Node(H->right, ele);
+        }
+    }
+    return NULL;
+}
+void insert_Node(Node* H, char A, char B, char C)
+{
+    H->ele = A;
+    if (B != '.')
+    {
+        H->left = NewNode(B);
+    }
+    if (C != '.')
+    {
+        H->right = NewNode(C);
+    }
 }
 
-TreeNode* putNode(TreeNode*node, char data, char left, char right) {
-	TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode*));
-
-	if (node->data == '.') return node;
-	else {
-		node->data = data;
-		putNode(newNode, )
-	}
-
-
+void print_pre(Node* H)
+{
+    if (H != NULL)
+        printf("%c", H->ele);
+    if (H->left != NULL)
+        print_pre(H->left);
+    if (H->right != NULL)
+        print_pre(H->right);
+}
+void print_in(Node* H)
+{
+    if (H->left != NULL)
+        print_in(H->left);
+    if (H != NULL)
+        printf("%c", H->ele);
+    if (H->right != NULL)
+        print_in(H->right);
+}
+void print_post(Node* H)
+{
+    if (H->left != NULL)
+        print_post(H->left);
+    if (H->right != NULL)
+        print_post(H->right);
+    if (H != NULL)
+        printf("%c", H->ele);
 }
 
-void preorder(TreeNode* p) {
-	if (p == NULL) return;
-	printf("%c", p->data);
-	preorder(p->left);
-	preorder(p->right);
-}
 
-void inorder(TreeNode* p ) {
-	if (p == NULL) return;
-	preorder(p->left);
-	printf("%c", p->data);
-	preorder(p->right);
-}
-
-void postorder(TreeNode* p) {
-	if (p == NULL) return;
-	preorder(p->left);
-	preorder(p->right);
-	printf("%c", p->data);
-}
-
-int main() {
-	int nodeNum;
-	char left, data, right;
-	scanf_s("%d", &nodeNum);
-	TreeNode* list[] = (char*)malloc(sizeof(char) * nodeNum);
-
-	TreeNode* root = init('A');	//루트 노드 생성
-
-	//입력 parent left right
-	for (int i = 0; i < nodeNum; i++) {
-		TreeNode* p = (TreeNode*)malloc(sizeof(TreeNode*));
-		scanf_s("%s %s %s", &left, &data, &right);
-		putNode(p, data, left, right);
-	}
-
-	return 0;
+int main()
+{
+    Node* H = NewNode(NULL);
+    Node* tmp;
+    int N;
+    int i;
+    scanf_s("%d", &N);
+    getchar();
+    for (i = 0; i < N; i++)
+    {
+        char A, B, C;
+        scanf_s("%c %c %c", &A, &B, &C);
+        getchar();
+        tmp = search_Node(H, A);
+        if (tmp != NULL)
+            insert_Node(tmp, A, B, C);
+        else
+            insert_Node(H, A, B, C);
+    }
+    print_pre(H);
+    printf("\n");
+    print_in(H);
+    printf("\n");
+    print_post(H);
 }
