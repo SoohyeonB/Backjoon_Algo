@@ -1,0 +1,30 @@
+class Solution {
+    public int solution(int[] scoville, int K) {
+        int answer = 0;
+        
+        return answer;
+    }
+    public void makeHeap(int[] list){
+        insertionSort(list);
+        for(int i=0; i<length(list); i++){
+            if(list[i]<k)
+                list[i] = list[i+1]+list[i]*2;
+            for(int j=i; j<length(list); j++){
+                
+            }
+        }
+    }
+    void insertionSort(int[] list){
+        int tmp, key;
+        for(int i=1; i<n; i++){
+            key = list[i];
+            int j = i-1;
+            while((j>=0) && (list[j]>key)){
+                list[j+1] = list[j];
+                j--;   
+            }
+            list[j+1] = key;
+        }
+        
+    }
+}
