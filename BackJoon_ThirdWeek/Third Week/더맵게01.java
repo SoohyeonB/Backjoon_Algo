@@ -8,7 +8,7 @@ class Solution {
 
         int count = 0;
         while(q.size() > 1 && q.peek() < K){
-            int weakHot = q.poll();
+            int weakHot = q.poll();    //poll() 함수: 큐에서 객체를 꺼내서 반환
             int secondWeakHot = q.poll();
 
             int mixHot = weakHot + (secondWeakHot * 2);
